@@ -24,6 +24,9 @@ import { UserInfoComponent } from './components/user-menu/components/user-info/u
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    HeaderComponent
   ]
 })
 export class HeaderModule { }
