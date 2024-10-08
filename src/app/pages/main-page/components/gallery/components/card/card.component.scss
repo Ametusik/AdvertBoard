@@ -1,0 +1,37 @@
+.advert {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  gap: 2px;
+
+  img {
+    width: 306px;
+    height: 240px;
+    border-radius: 4px;
+  }
+
+  a,p{
+    max-width:306px;
+  }
+
+  .advert__name, .advert__price {
+    font-size: 18px;
+    font-weight: 600;
+
+  }
+
+
+
+  .advert__price {
+    color: #1E293B;
+  }
+
+  .advert__name {
+    color: #3B82F6;
+  }
+
+  .advert__address,.advert__create_time{
+    color: #64748B;
+  }
+
+}

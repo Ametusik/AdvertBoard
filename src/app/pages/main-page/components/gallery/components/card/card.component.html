@@ -1,1 +1,8 @@
-<p>card works!</p>
+<div class="advert">
+  <img [src]="imageUrl" alt="{{advert.name}}" width="306px"
+       height="240px">
+  <a routerLink="/advert/{{advert.id}}" [queryParams]="{'id':advert.id}" class="advert__name">{{advert.name}} </a>
+  <p class="advert__price">{{advert.cost}}$</p>
+  <p class="advert__address">{{advert.location}}</p>
+  <p class="advert__create_time">{{advert.createdAt|date}}</p>
+</div>
