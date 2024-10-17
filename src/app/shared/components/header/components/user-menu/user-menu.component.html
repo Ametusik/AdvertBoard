@@ -1,1 +1,5 @@
-<p>user-menu works!</p>
+<div class="container">
+  <app-user-info *ngIf="isLogged"></app-user-info>
+  <app-login-button *ngIf="!isLogged"></app-login-button>
+  <app-add-adv-button></app-add-adv-button>
+</div>

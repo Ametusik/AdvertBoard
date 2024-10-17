@@ -8,6 +8,11 @@ import { SearchInputComponent } from './components/search-panel/components/searc
 import { AddAdvButtonComponent } from './components/user-menu/components/add-adv-button/add-adv-button.component';
 import { LoginButtonComponent } from './components/user-menu/components/login-button/login-button.component';
 import { UserInfoComponent } from './components/user-menu/components/user-info/user-info.component';
+import {RouterLink} from "@angular/router";
+import {
+  CategoriesDropdownComponent
+} from "./components/search-panel/components/categories-dropdown/categories-dropdown.component";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -20,10 +25,13 @@ import { UserInfoComponent } from './components/user-menu/components/user-info/u
     SearchInputComponent,
     AddAdvButtonComponent,
     LoginButtonComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    CategoriesDropdownComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterLink,
+    FormsModule
   ],
   exports:[
     HeaderComponent

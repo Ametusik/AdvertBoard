@@ -1,1 +1,39 @@
-<p>advert-content works!</p>
+<div class="advert-page">
+  <div class="container">
+    <div class="advert">
+      <div class="left_block">
+        <h2>{{advert.name}}</h2>
+        <ng-container *ngIf="images === undefined; else imageTemplate">
+          <img src="assets/img/mockAdvertPhoto.jpeg" alt="Моковое изображение" style="width: 856px; height: 512px;">
+        </ng-container>
+        <ng-template #imageTemplate>
+          <ng-container *ngIf="images.length === 1; else carouselTemplate">
+            <img [src]="images[0]" alt="{{advert.name}}" style="width: 856px; height: 512px;">
+          </ng-container>
+        </ng-template>
+        <ng-template #carouselTemplate>
+          <p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true"
+                      [style]="{'width': '856px', 'height': '512px'}">
+            <ng-template let-item pTemplate="item" class="advert__photo">
+              <img [src]="item" alt="{{advert.name}}" class="carousel-image">
+            </ng-template>
+          </p-carousel>
+        </ng-template>
+      </div>
+      <div class="right_block">
+        <h3>{{advert.cost}} $</h3>
+        <p>Показать номер телефона</p>
+        <app-phone-number-modal [phoneNumber]="advert.phone">
+        </app-phone-number-modal>
+        <div class="advert__location">
+          <h3>Адрес</h3>
+          <p>{{advert.location}}</p>
+        </div>
+        <div class="advert__description">
+          <h3>Описание</h3>
+          <p>{{advert.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

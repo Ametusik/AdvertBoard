@@ -1,0 +1,30 @@
+<div class="categories-container" *ngIf="areCategoriesVisible">
+  <div class="main-categories">
+    <ul>
+      <li *ngFor="let category of mainCategories"
+          (mouseenter)="onMouseEnter(category.id)"
+          (click)="selectCategory(category.id)">
+        {{ category.name }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="subcategories">
+    <ul *ngIf="selectedSubcategories.length > 0">
+      <li *ngFor="let subcategory of selectedSubcategories"
+          (mouseenter)="onSubcategoryMouseEnter(subcategory.id)"
+          (click)="selectCategory(subcategory.id)">
+        {{ subcategory.name }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="subcategories-of-subcategory">
+    <ul *ngIf="selectedSubcategoriesOfSubcategory.length > 0">
+      <li *ngFor="let child of selectedSubcategoriesOfSubcategory"
+          (click)="selectCategory(child.id)">
+        {{ child.name }}
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+container {
+  width: 100%;
+  max-width: 1296px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  width: 100%;
+  min-height: 136px;
+
+  .header-top {
+    display: flex;
+    align-items:center;
+    align-content:center;
+    justify-content:center;
+    height:52px;
+    background-color: #1E293B;
+
+
+    .header-top__content {
+      display: flex;
+      justify-content:flex-end;
+      width:100%;
+    }
+  }
+  .header-bottom{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    min-height: 84px;
+    width:100%
+  }
+
+
+}

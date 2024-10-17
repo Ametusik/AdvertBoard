@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: white;
+  gap: 10px;
+}
+
+.container:hover span,
+.container:hover svg:nth-of-type(2) {
+  color: red;
+}
+
+.container:hover svg:nth-of-type(2) path {
+  fill: red;
+  stroke: red;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 10;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-direction: column; /* Используем flexbox */
+  width: 150px; /* Ширина выпадающего меню */
+}
+
+.container:hover .dropdown {
+  display: flex; /* Отображаем как flex при наведении */
+}
+
+.dropdown-button {
+  background: none;
+  border: none;
+  color: black;
+  padding: 8px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-button:hover {
+  background-color: #f0f0f0;
+}

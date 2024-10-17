@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-phone-number-modal',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./phone-number-modal.component.scss']
 })
 export class PhoneNumberModalComponent {
+  visibleModal:boolean=false;
+  @Input() phoneNumber:string='';
 
+  showNumber() {
+    this.visibleModal=true;
+  }
 }

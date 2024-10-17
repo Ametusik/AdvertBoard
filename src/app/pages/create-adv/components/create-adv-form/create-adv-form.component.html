@@ -1,1 +1,52 @@
-<p>create-adv-form works!</p>
+<div class="container">
+  <form [formGroup]="categoryForm" (ngSubmit)="addAdvert()">
+
+    <label for="selectedCategory">Выберите категорию:</label>
+    <select id="selectedCategory" formControlName="selectedCategory" class="select-category">
+      <option value="">Нажмите, чтобы выбрать</option>
+      <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+    </select>
+
+    <div *ngIf="subcategories.length > 0">
+      <select formControlName="selectedSubcategory" class="select-category">
+        <option value="">Нажмите, чтобы выбрать</option>
+        <option *ngFor="let subcategory of subcategories" [value]="subcategory.id">{{ subcategory.name }}</option>
+      </select>
+    </div>
+
+    <div *ngIf="nestedSubcategories.length > 0">
+      <select  formControlName="selectedNestedSubcategory" class="select-category">
+        <option value="">Нажмите, чтобы выбрать</option>
+        <option *ngFor="let nestedSubcategory of nestedSubcategories" [value]="nestedSubcategory.id">{{ nestedSubcategory.name }}</option>
+      </select>
+    </div>
+    <label for="name">Название объявления</label>
+    <input id="name" formControlName="name" required placeholder="Что хотите продать?">
+
+    <label for="description">Описание</label>
+    <textarea id="description" formControlName="description"  placeholder="Расскажите подробнее о товаре или услуге"></textarea>
+
+    <label for="location">Адрес(место проведения сделки)</label>
+    <input id="location" formControlName="location" required placeholder="Начните вводить адрес">
+
+
+    <label>Изображения:</label>
+    <input type="file" (change)="onFileChange($event)" multiple accept="image/png, image/jpeg">
+    <div *ngFor="let image of categoryForm.value.images; let i = index">
+      <img [src]="getImageUrl(image)" alt="Uploaded image" style="width: 100px; height: auto;">
+      <button type="button" (click)="removeImage(i)">Удалить</button>
+    </div>
+
+    <label for="price">Цена</label>
+    <input id="price" class="select-price" formControlName="price" required placeholder="0 $">
+
+    <label for="email">Почта</label>
+    <input id="email" formControlName="email" placeholder="Введите почту" type="email">
+
+    <label for="phoneNumber">Номер телефона:</label>
+    <input id="phoneNumber" formControlName="phoneNumber" required type="tel">
+
+    <button type="submit">Разместить объявление</button>
+  </form>
+
+</div>

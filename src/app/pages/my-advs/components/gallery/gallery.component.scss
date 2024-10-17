@@ -1,0 +1,30 @@
+.main {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+
+
+  .container {
+    max-width: 1296px;
+    width: 100%;
+
+    .main__content {
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      .gallery {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+    }
+
+
+  }
+}

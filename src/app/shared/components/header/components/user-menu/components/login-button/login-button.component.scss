@@ -1,0 +1,21 @@
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 36px;
+  width: 70px;
+  background: none;
+  border: none;
+  color: white;
+  padding: 0;
+  cursor: pointer;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+p {
+  color: white;
+}

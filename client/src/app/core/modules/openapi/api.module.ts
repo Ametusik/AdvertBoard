@@ -1,10 +1,10 @@
 import { NgModule, ModuleWithProviders, SkipSelf, Optional } from '@angular/core';
 import { Configuration } from './configuration';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
-  imports:      [],
+  imports:      [HttpClientModule],
   declarations: [],
   exports:      [],
   providers: []

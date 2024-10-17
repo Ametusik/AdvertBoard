@@ -42,7 +42,7 @@ import {
 })
 export class AdvertService implements AdvertServiceInterface {
 
-    protected basePath = 'http://localhost';
+    protected basePath = 'http://dzitskiy.ru:5000';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;
